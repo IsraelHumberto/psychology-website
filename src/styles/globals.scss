@@ -1,0 +1,97 @@
+@import './variables.scss';
+@import './mixins.scss';
+@import "~slick-carousel/slick/slick-theme.css";
+@import "~slick-carousel/slick/slick.css"; 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include devices(notebook) {
+    font-size: 60%;
+  }
+
+  @include devices(tablet) {
+    font-size: 58%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $gray;
+}
+
+h1,
+.h1 {
+  font-size: 6.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include devices(notebook) {
+    font-size: 3.6rem;
+  }
+
+  @include devices(mobile) {
+    font-size: 3.2rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 3.6rem;
+  font-weight: 600;
+
+  @include devices(mobile) {
+    font-size: 3rem;
+  }
+}
+
+p,
+.p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 3rem;
+
+  @include devices(tablet) {
+    font-size: 1.4rem;
+  }
+}
+
+.titleSection {
+  text-align: center;
+  font-weight: 300;
+  color: $orange700;
+}
+
+.btn {
+  padding: 1.5rem 2.4rem;
+
+  font-family: inherit;
+  font-size: 1.8rem;
+
+  cursor: pointer;
+  outline: none;
+
+  &.btn-primary {
+    @include linear-btn-primary;
+  }
+
+  &.btn-secondary {
+    @include linear-btn-secondary;
+  }
+
+  @include devices(tablet-sm) {
+    padding: 1.2rem 1.8rem;
+  }
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,44 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.footer {
+    background-color: $orange100;
+
+    .content {
+        @include max-width;
+        padding: 52px 12px;
+
+        .socialMediaContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            h3 {
+                font-size: 4.8rem;
+                font-family: var(--sacramento-font);
+                font-weight: 100;
+                margin-right: 12px;
+                color: $green300;
+                text-align: center;
+            }
+
+            .iconApp {
+                display: inline-block;
+                margin: 0 12px;
+                width: 100px;
+                height: 100px;
+                position: relative;
+
+                @include devices(tablet) {
+                    width: 50px;
+                    height: 50px;
+                  }
+            }
+
+        }
+
+    }
+
+
+}

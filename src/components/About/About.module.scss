@@ -1,0 +1,66 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+
+.about {
+    background-color: $gray;
+    
+    .content {
+        @include max-width;
+        @include section-padding;
+    }
+
+    .flex {
+        display: flex;
+        gap: 10rem;
+        padding: 6rem 0;
+        flex-wrap: wrap;
+
+        .description {
+            flex: 3 3 300px;
+
+            p {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+                color: $orange500;
+            }
+        }
+
+        .specialities {
+            flex: 2 2 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: $green300;
+            color: $white;
+            text-align: justify;
+            padding: 2.4rem 2rem;
+            
+            .title {
+                font-size: 3rem;
+                color: $white;
+                text-transform: uppercase;
+            }
+            
+            .list {
+                width: 80%;
+                padding-top: 2rem;
+                
+                .item {
+                    list-style: none;
+                    text-align: center;
+                    text-transform: uppercase;
+                    border-bottom: 2px solid $green100;
+                    padding: 1.6rem 0;
+                    width: 100%;
+
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,76 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.testimonialsContainer {
+    .content {
+        @include max-width;
+        @include section-padding;
+
+        .testimonials {
+            gap: 60px;
+            display: flex;
+            margin-top: 84px;
+            flex-wrap: wrap;
+
+            @include devices(tablet-sm) {
+                margin-top: 48px;
+              }
+        }
+    }
+
+    .testimonial {
+        flex: 1 1 250px;
+
+        .heading {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            align-items: center;
+
+            .apresentation {
+                
+                .name {
+                    color: $orange700;
+                    font-size: 2rem;
+                }
+
+                .treatment {
+                    font-size: 1.8rem;
+                    color: $orange500;
+                }
+            }
+
+            img {
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+
+        .text {
+            position: relative;
+            text-align: justify;
+            line-height: 2rem;
+            font-size: 2rem;
+            font-weight: 300;
+            color: $green700;
+
+            .quotes {
+                z-index: -2;
+                position: absolute;
+                opacity: 0.1;
+            }
+
+            .quotesLeft {
+                left: -20px;
+                top: 0;
+                transform: translateY(-40%);
+            }
+            .quotesRight {
+                right: -20px;
+                bottom: 0;
+                transform: translateY(40%);
+            }
+        }
+
+    }
+}

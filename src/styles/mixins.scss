@@ -1,0 +1,89 @@
+@mixin max-width {
+    max-width: 144rem;
+    margin: 0 auto;
+}
+
+@mixin section-padding {
+  padding: $marginBottom 6rem;
+
+  @include devices(notebook) {
+    padding: $marginBottom 4rem;
+  }
+  @include devices(tablet) {
+    padding: $marginBottom 3rem;
+  }
+  @include devices(tablet-sm) {
+    padding: $marginBottom 2rem;
+  }
+  @include devices(mobile) {
+    padding: $marginBottomMobile 1.5rem;
+  }
+}
+
+@mixin linear-btn-primary {
+  background: linear-gradient(135deg, $green500 0%, $green300 100%);
+  box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+  border-radius: 28px;
+  border: transparent;
+  color: $white;
+  background-size: 350% 150%;
+  background-position: 100% 0;
+  @include transition1(all);
+  
+  &:hover {
+    background-position:  0;
+    @include transition1(all)
+  }
+}
+
+@mixin linear-btn-secondary {
+  background: linear-gradient(135deg, $orange500 0%, $orange300 100%);
+  box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+  border-radius: 28px;
+  border: transparent;
+  color: $white;
+  background-size: 350% 150%;
+  background-position: 100% 0;
+  @include transition1(all);
+  
+  &:hover {
+    background-position:  0;
+    @include transition1(all)
+  }
+}
+
+@mixin transition1($property) {
+  transition: $property ease-in-out 700ms ;
+}
+
+@mixin devices($device) {
+    @if $device == desktop {
+      @media only screen and (max-width: 1440px) {
+        @content;
+      }
+    }
+  
+    @if $device == notebook {
+      @media only screen and (max-width: 1200px) {
+        @content;
+      }
+    }
+
+    @if $device == tablet {
+      @media only screen and (max-width: 1024px) {
+        @content;
+      }
+    }
+  
+    @if $device == tablet-sm {
+      @media only screen and (max-width: 768px) {
+        @content;
+      }
+    }
+  
+    @if $device == mobile {
+      @media only screen and (max-width: 425px) {
+        @content;
+      }
+    }
+  }
